@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to Money Concept | Bcentx Learning Centre</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/svg+xml" href="../../../favicon/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../../../index.html" class="logo" aria-label="Bcentx Home">
+                <img src="../../../Bcentx-Logo/LogoSVG.svg" alt="Bcentx Logo">
+            </a>
+            <nav id="main-nav" class="nav-pill-group" aria-label="Intro to Money Concept sections">
+                <button type="button" data-section="foundation" class="nav-link active" aria-pressed="true">Foundation</button>
+                <button type="button" data-section="archetypes" class="nav-link" aria-pressed="false">Archetypes</button>
+                <button type="button" data-section="mechanics" class="nav-link" aria-pressed="false">Mechanics</button>
+                <button type="button" data-section="avenues" class="nav-link" aria-pressed="false">Avenues</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <section id="foundation" class="content-section active" aria-labelledby="foundation-heading">
+            <article class="section-card intro-hero">
+                <h1 id="foundation-heading">Intro to Money Concept</h1>
+                <p>The Foundation: Mindset is Everything. Wealth creation is a strategic game governed by learnable rules and a specific mindset. This section explores the core psychological principles that separate the wealthy from the rest, and the fundamental limitations of traditional income models.</p>
+            </article>
+
+            <div class="card-grid card-grid--two">
+                <article class="section-card section-card--outlined">
+                    <h2>Critical Mental Models</h2>
+                    <div class="details-stack">
+                        <details class="accordion">
+                            <summary>
+                                <span>Abundance vs. Scarcity</span>
+                                <span class="accordion-icon">
+                                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                </span>
+                            </summary>
+                            <p>The wealthy operate from an abundance mindset, seeing opportunities for growth and collaboration. A scarcity mindset focuses on limitations and competition, hindering wealth creation.</p>
+                        </details>
+                        <details class="accordion">
+                            <summary>
+                                <span>Assets vs. Liabilities</span>
+                                <span class="accordion-icon">
+                                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                </span>
+                            </summary>
+                            <p>A core principle from "Rich Dad Poor Dad": an asset puts money in your pocket, while a liability takes money out. The wealthy focus on acquiring assets, not liabilities they think are assets.</p>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="section-card section-card--outlined">
+                    <h2>The Time-for-Money Trap</h2>
+                    <p>Linear income, where earnings are tied to hours worked, is not scalable. There is a mathematical and practical cap on your earning potential, leading to burnout and missed opportunities.</p>
+                    <div class="chart-shell">
+                        <canvas id="incomeModelChart"></canvas>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="archetypes" class="content-section" aria-labelledby="archetypes-heading">
+            <article class="section-card intro-card text-center">
+                <h2 id="archetypes-heading">The Player Archetypes</h2>
+                <p>Everyone plays a role in the game of wealth, each with unique strategies, risks, and rewards. Understanding these archetypes helps you identify your current position and plan your next move. Explore the roles and compare their key attributes.</p>
+            </article>
+
+            <p class="section-tip">Tip: Click on a legend item (e.g., "Business Owner") to show or hide it on the chart.</p>
+
+            <div class="card-grid card-grid--split align-center">
+                <div class="section-card section-card--outlined chart-holder">
+                    <canvas id="archetypeRadarChart"></canvas>
+                </div>
+                <div id="archetype-details" class="section-card section-card--outlined highlight-card" aria-live="polite">
+                    <span class="highlight-meta">Choose an archetype</span>
+                    <h3>Player Insights</h3>
+                    <p>Select a player profile below to explore strategy, strengths, and risk profile.</p>
+                </div>
+            </div>
+
+            <div class="button-grid">
+                <button type="button" data-archetype="employee" class="archetype-btn">Employee</button>
+                <button type="button" data-archetype="self-employed" class="archetype-btn">Self-Employed</button>
+                <button type="button" data-archetype="business-owner" class="archetype-btn">Business Owner</button>
+                <button type="button" data-archetype="investor" class="archetype-btn">Investor</button>
+            </div>
+        </section>
+
+        <section id="mechanics" class="content-section" aria-labelledby="mechanics-heading">
+            <article class="section-card intro-card text-center">
+                <h2 id="mechanics-heading">Income Mechanics &amp; Strategies</h2>
+                <p>Wealth isn't just about earning more; it's about how you earn. This section breaks down the primary income streams and the three core models that define the path from active work to financial freedom.</p>
+            </article>
+
+            <div class="content-split">
+                <article class="section-card section-card--outlined content-split__primary">
+                    <h3>Comparing the 7 Primary Income Streams</h3>
+                    <p>This chart compares income streams based on their potential for scalability and passive involvement. Higher scores are better.</p>
+                    <div class="chart-shell chart-shell--tall">
+                        <canvas id="incomeStreamChart"></canvas>
+                    </div>
+                </article>
+                <article class="section-card section-card--outlined content-split__secondary">
+                    <h3>The Three Core Income Models</h3>
+                    <div class="model-stack">
+                        <div>
+                            <h4>M1: Money for Time</h4>
+                            <p>The direct exchange of labor for money. Foundational but least efficient. Associated with Employees and the Self-Employed.</p>
+                        </div>
+                        <div class="model-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>M2: Money for Money</h4>
+                            <p>Deploying capital to generate more capital through assets. This is the power of compounding, primarily used by Investors.</p>
+                        </div>
+                        <div class="model-arrow" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>M3: Multiplying Time through Leverage</h4>
+                            <p>Using systems and other people's efforts to generate income not tied to your own time. The model for exponential growth, mastered by Business Owners.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="avenues" class="content-section" aria-labelledby="avenues-heading">
+            <article class="section-card intro-card text-center">
+                <h2 id="avenues-heading">Modern Avenues for Wealth Creation</h2>
+                <p>The digital age has opened countless new pathways to wealth. This section provides a practical analysis of contemporary platforms and strategies. Explore different avenues based on your interests and risk tolerance.</p>
+            </article>
+
+            <div class="filter-group" role="group" aria-label="Filter avenues by barrier">
+                <button type="button" data-filter="all" class="avenue-filter-btn is-active">All</button>
+                <button type="button" data-filter="low" class="avenue-filter-btn">Low Barrier</button>
+                <button type="button" data-filter="medium" class="avenue-filter-btn">Medium Barrier</button>
+                <button type="button" data-filter="high" class="avenue-filter-btn">High Barrier</button>
+            </div>
+
+            <div id="avenues-grid" class="card-grid card-grid--avenues" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

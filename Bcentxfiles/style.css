@@ -1,0 +1,365 @@
+/* Bcentx Global Stylesheet */
+
+/* Color Theme */
+:root {
+  --primary-blue: #1b145e;
+  --secondary-blue: #6c757d;
+  --light-blue: #e9f5ff;
+  --primary-green: #28a745;
+  --secondary-green: #218838;
+  --light-green: #d4edda;
+}
+
+/* Base Elements */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: var(--light-blue);
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+  font-weight: 700;
+}
+
+a {
+  color: var(--primary-green);
+}
+
+a:hover {
+  color: var(--secondary-green);
+}
+
+button,
+.cta-button {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+button:hover,
+.cta-button:hover {
+  background-color: #1f52b3;
+  color: white;
+}
+
+/* Layout */
+header {
+  background: var(--primary-blue);
+  border-bottom: 4px solid var(--primary-green);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--primary-blue);
+  background-color: var(--light-green);
+}
+
+header .logo img {
+  height: 50px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Financial Path Section */
+.financial-path {
+  max-width: 1000px;
+  margin: 3rem auto 2rem;
+  padding: 2rem 1rem;
+}
+
+.financial-path .path-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.financial-path .path-item {
+  text-align: center;
+  background-color: white;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.financial-path .path-item:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.financial-path .path-item:hover svg {
+  color: white;
+}
+
+.financial-path .path-item svg {
+  width: 64px;
+  height: 64px;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.financial-path .path-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.financial-path .path-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.financial-path .path-item:hover h3,
+.financial-path .path-item:hover p {
+  color: white;
+}
+
+/* Mission Statement */
+.mission-statement {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.mission-statement p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Post & Category Sections */
+.post-section,
+.category-section {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.post-card {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Buttons */
+.read-more-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--primary-green);
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.read-more-button:hover {
+  background-color: #1f52b3;
+  color: white;
+}
+
+.post-card .read-more-button {
+  align-self: center;
+  margin-top: auto;
+}
+
+.category-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Quick Links / Popular Categories */
+#popular-categories {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.quick-links-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.quick-link {
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.quick-link:hover {
+  background-color: #1b145e;
+  color: white;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  background-color: #1f52b3;
+  padding: 3rem 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: #f5f9ff;
+}
+
+.site-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer .footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.site-footer .footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer .footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: #f5f9ff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--light-green);
+}
+
+.site-footer .social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer .legal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  color: #e0ecff;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .financial-path .path-item,
+  .mission-statement,
+  .post-section,
+  .category-section {
+    padding: 1.5rem;
+  }
+
+  .site-footer .footer-container {
+    grid-template-columns: 1fr;
+  }
+}

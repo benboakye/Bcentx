@@ -1,0 +1,337 @@
+/* Learning Centre Stylesheet */
+
+/* Color Theme aligns with main site */
+:root {
+  --primary-blue: #1b145e;
+  --secondary-blue: #6c757d;
+  --light-blue: #e9f5ff;
+  --primary-green: #28a745;
+  --secondary-green: #218838;
+  --light-green: #d4edda;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: var(--light-blue);
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+  font-weight: 700;
+}
+
+a {
+  color: var(--primary-green);
+}
+
+a:hover {
+  color: var(--secondary-green);
+}
+
+button,
+.cta-button {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+button:hover,
+.cta-button:hover {
+  background-color: #1f52b3;
+  color: white;
+}
+
+/* Layout */
+header {
+  background: var(--primary-blue);
+  border-bottom: 4px solid var(--primary-green);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--primary-blue);
+  background-color: var(--light-green);
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header nav .current-page {
+  color: var(--light-green);
+  font-weight: 700;
+  cursor: default;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.explore-topics-section {
+  background-color: white;
+  padding: 3rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.explore-topics-section h2 {
+  margin-bottom: 1rem;
+}
+
+.explore-topics-section .section-intro {
+  margin: 0 auto 2rem;
+  max-width: 720px;
+}
+
+.quick-links-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quick-link {
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.quick-link:hover {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.quick-link--featured {
+  background: linear-gradient(135deg, #1b145e, #3f89e8);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+  box-shadow: 0 12px 25px rgba(27, 20, 94, 0.25);
+  position: relative;
+}
+
+.quick-link--featured::after {
+  content: "Start here";
+  display: inline-block;
+  margin-left: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.quick-link--featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(27, 20, 94, 0.3);
+}
+
+/* Topics Preview */
+.topics-preview,
+.resource-spotlight {
+  background-color: white;
+  padding: 3rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.section-intro {
+  margin: 0 auto 2rem;
+  max-width: 680px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.topics-grid,
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.topic-card,
+.resource-card {
+  background-color: var(--light-blue);
+  border-radius: 10px;
+  padding: 1.75rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.topic-card h3,
+.resource-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.topic-card p,
+.resource-card p {
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+.topic-card .read-more-button {
+  align-self: center;
+  margin-top: auto;
+}
+
+.text-link {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.text-link:hover {
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+/* Footer (inherits main look) */
+.site-footer {
+  margin-top: 3rem;
+  background-color: #1f52b3;
+  padding: 3rem 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: #f5f9ff;
+}
+
+.site-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer .footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.site-footer .footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer .footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer .footer-column .current-page {
+  color: #f5f9ff;
+  font-weight: 700;
+}
+
+.site-footer a {
+  color: #f5f9ff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--light-green);
+}
+
+.site-footer .social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer .legal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  color: #e0ecff;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .explore-topics-section,
+  .topics-preview,
+  .resource-spotlight {
+    padding: 1.5rem;
+  }
+
+  .site-footer .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
