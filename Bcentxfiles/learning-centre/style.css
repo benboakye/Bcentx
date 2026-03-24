@@ -54,6 +54,43 @@ button:hover,
   color: white;
 }
 
+/* Learning Hero Section */
+.learning-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.learning-hero h1 {
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.learning-hero p {
+  max-width: 680px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.learning-hero .cta-button {
+  display: inline-block;
+  padding: 1rem 2.75rem;
+  font-size: 1.15rem;
+  border-radius: 8px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.35);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learning-hero .cta-button:hover {
+  background-color: var(--secondary-green);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(40, 167, 69, 0.45);
+}
+
 /* Layout */
 header {
   background: var(--primary-blue);
@@ -67,7 +104,37 @@ header nav {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 3.2rem;
+  position: relative;
+}
+
+.back-arrow {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-arrow svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.back-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
+  transform: translate(-2px, -50%);
 }
 
 header nav ul {
@@ -78,7 +145,7 @@ header nav ul {
   padding: 0;
 }
 
-header nav a {
+header nav a:not(.back-arrow) {
   text-decoration: none;
   font-weight: 600;
   color: #fff;
@@ -87,13 +154,17 @@ header nav a {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-header nav a:hover {
+header nav a:not(.back-arrow):hover {
   color: var(--primary-blue);
   background-color: var(--light-green);
 }
 
 header .logo img {
   height: 50px;
+}
+
+header .logo {
+  margin-left: -0.65rem;
 }
 
 header nav .current-page {

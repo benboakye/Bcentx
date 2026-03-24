@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
             
     const sections = document.querySelectorAll('.content-section');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
     const data = {
         archetypes: {
@@ -76,14 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.toggle('active', isActive);
             link.setAttribute('aria-pressed', String(isActive));
         });
+        window.location.hash = sectionId;
         window.scrollTo(0, 0);
     }
 
+    function initializeSectionFromHash() {
+        const sectionId = window.location.hash.replace('#', '');
+        if (sectionId && document.getElementById(sectionId)) {
+            switchSection(sectionId);
+        }
+    }
+
     document.getElementById('main-nav').addEventListener('click', (e) => {
-        if (e.target.matches('.nav-link')) {
+        if (e.target.matches('.nav-link[data-section]')) {
             switchSection(e.target.dataset.section);
+            return;
+        }
+
+        if (e.target.matches('.nav-link[data-page]')) {
+            window.location.href = e.target.dataset.page;
         }
     });
+
+    initializeSectionFromHash();
 
     function createIncomeModelChart() {
         const ctx = document.getElementById('incomeModelChart').getContext('2d');

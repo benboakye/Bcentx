@@ -1,0 +1,63 @@
+/* ============================================
+   INTRO TO MONEY AND BUSINESS - SPECIFIC STYLES
+   ============================================ */
+
+/* Era Sections */
+.era {
+    margin-bottom: 1.5rem;
+}
+
+.era h2 {
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid var(--primary-green);
+    padding-left: 0.75rem;
+}
+
+.era p {
+    color: #333;
+    margin-bottom: 0.9rem;
+}
+
+.era .wealth-box {
+    background: var(--light-green);
+    border-left: 4px solid var(--primary-green);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 0.75rem;
+}
+
+.era .wealth-box strong {
+    display: block;
+    color: var(--secondary-green);
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Closing Section */
+.closing {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 2rem 1.75rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    box-shadow: 0 14px 32px rgba(27, 20, 94, 0.2);
+}
+
+.closing h2 {
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
+}
+
+.closing p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+}
+
+.closing p:last-child {
+    margin-bottom: 0;
+}

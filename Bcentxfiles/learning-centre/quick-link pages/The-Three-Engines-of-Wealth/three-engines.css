@@ -1,0 +1,77 @@
+/* ============================================
+   THE THREE ENGINES OF WEALTH - SPECIFIC STYLES
+   ============================================ */
+
+/* Intro Text */
+.intro-text {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Engine Cards */
+.engine {
+    border-radius: 14px;
+    border: 1px solid rgba(27, 20, 94, 0.1);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 12px 28px rgba(27, 20, 94, 0.08);
+}
+
+.engine-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.engine h2 {
+    font-size: 1.35rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.engine p {
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.engine p:last-child {
+    margin-bottom: 0;
+}
+
+.engine .constraint {
+    background: var(--light-green);
+    border-left: 4px solid var(--primary-green);
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: #1d5c30;
+    margin-top: 0.75rem;
+}
+
+/* Takeaway Section */
+.takeaway {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 2rem 1.75rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    box-shadow: 0 14px 32px rgba(27, 20, 94, 0.2);
+}
+
+.takeaway h2 {
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
+}
+
+.takeaway p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.75rem;
+}
+
+.takeaway p:last-child {
+    margin-bottom: 0;
+}
