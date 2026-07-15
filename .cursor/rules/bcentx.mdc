@@ -1,0 +1,44 @@
+---
+description: Bcentx 2.0 build rules for Cursor agents
+globs:
+alwaysApply: true
+---
+
+# Bcentx Cursor Rules
+
+You are building Bcentx 2.0, a global wealth intelligence platform.
+
+## Stack
+
+- Next.js (App Router), TypeScript, Tailwind CSS
+- Supabase PostgreSQL + Auth (after Sprint 1)
+- Vercel hosting
+
+## Preserve
+
+- Blue/green V1 theme (`#1b145e`, `#28a745`, `#e9f5ff`)
+- Learning Centre spirit
+- Card-based UI
+- Beginner-friendly educational tone
+- Logo / brand assets under `public/brand/`
+
+## MVP Scope
+
+- Keep MVP scope only
+- Do not add advanced AI, payments, subscriptions, community, mobile app, portfolio tracker, wallets, or investment execution unless explicitly requested
+- Prioritize risk warnings, country availability, affiliate transparency, and source-backed content
+
+## Trust & Security
+
+- No get-rich-quick or guaranteed-income claims
+- No personalized financial, legal, or tax advice
+- Do not expose Supabase service role keys
+- Public users should only see published content (when DB exists)
+- Admin functionality must be protected server-side
+
+## Repository Hygiene
+
+- Do not overwrite `legacy/v1-static-site/` carelessly
+- Do not dump the full Google Drive package into the repo
+- Update `docs/build-log/BUILD_LOG.md` when completing meaningful tasks
+- Record major choices in `docs/build-log/DECISIONS.md`
