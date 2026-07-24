@@ -1,75 +1,67 @@
-import Link from "next/link";
+import { PageHero } from "@/components/ui/PageHero";
+import { WarningBox, AffiliateDisclosureBox } from "@/components/ui/WarningBox";
+import { CategoryCard } from "@/components/cards/CategoryCard";
+import { OpportunityCard } from "@/components/cards/OpportunityCard";
+import { ArticleCard } from "@/components/cards/ArticleCard";
+import { demoArticles, demoOpportunities } from "@/lib/demo-content";
+import { getPublishedCategories } from "@/lib/data/public-content";
 
-const shells = [
-  {
-    href: "/categories",
-    title: "Categories",
-    body: "Explore wealth-building categories with clear risk and startup context.",
-  },
-  {
-    href: "/opportunities",
-    title: "Opportunities",
-    body: "Compare structured opportunities — how money is made and how it can be lost.",
-  },
-  {
-    href: "/blog",
-    title: "Learning Centre",
-    body: "Beginner-friendly guides that preserve the V1 Learning Centre spirit.",
-  },
-  {
-    href: "/roadmaps",
-    title: "Roadmaps",
-    body: "Step-by-step beginner paths for realistic income and skill building.",
-  },
-];
+export default async function HomePage() {
+  const { source, items: categories } = await getPublishedCategories();
+  const featuredCategories = categories.slice(0, 4);
 
-export default function HomePage() {
   return (
     <div>
-      <section className="bg-gradient-to-b from-bcentx-blue to-bcentx-blue/90 px-4 py-16 text-white sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-bcentx-green-soft">
-            Bcentx 2.0 foundation
-          </p>
-          <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Financial Growth, Simplified
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
-            Discover legitimate wealth-building paths with honest risk warnings,
-            country awareness, and beginner-friendly guidance — without the hype.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/categories"
-              className="inline-flex rounded-md bg-bcentx-green px-5 py-2.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-bcentx-green-dark hover:text-white"
-            >
-              Explore categories
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex rounded-md border border-white/40 bg-transparent px-5 py-2.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-white/10 hover:text-white"
-            >
-              Visit Learning Centre
-            </Link>
-          </div>
+      <PageHero
+        eyebrow="Bcentx 2.0"
+        title="Financial Growth, Simplified"
+        description="Discover legitimate wealth-building paths with honest risk warnings, country awareness, and beginner-friendly guidance — without the hype."
+        primaryCta={{ href: "/categories", label: "Explore categories" }}
+        secondaryCta={{ href: "/blog", label: "Visit Learning Centre" }}
+      />
+
+      <section className="mx-auto max-w-6xl space-y-4 px-4 py-8">
+        <WarningBox variant="caution" title="Educational content only">
+          Bcentx does not provide personalized financial, legal, or tax advice. Opportunities can
+          lose money. Always verify details for your country and situation.
+        </WarningBox>
+        <AffiliateDisclosureBox />
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12">
+        <h2 className="text-2xl font-bold text-bcentx-blue">Popular categories</h2>
+        <p className="mt-2 max-w-2xl text-bcentx-gray">
+          {source === "supabase"
+            ? "Loaded from published Supabase category records."
+            : "Demo category cards until Supabase env + migrations are connected."}
+        </p>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {featuredCategories.map((item) => (
+            <CategoryCard key={item.title} {...item} />
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-bcentx-blue">Choose your starting path</h2>
+      <section className="mx-auto max-w-6xl px-4 pb-12">
+        <h2 className="text-2xl font-bold text-bcentx-blue">Sample opportunities</h2>
         <p className="mt-2 max-w-2xl text-bcentx-gray">
-          Route shells for Sprint 1. Full database-backed pages come in later sprints.
+          Scores, risk, skill, and startup-cost badges preview the trust-first comparison UI.
+        </p>
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          {demoOpportunities.map((item) => (
+            <OpportunityCard key={item.title} {...item} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <h2 className="text-2xl font-bold text-bcentx-blue">From the Learning Centre</h2>
+        <p className="mt-2 max-w-2xl text-bcentx-gray">
+          Preserves the V1 learning feel with cleaner article cards.
         </p>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {shells.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-xl bg-card p-6 shadow-sm no-underline transition-shadow hover:shadow-md"
-            >
-              <h3 className="text-xl font-semibold text-bcentx-blue">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/80">{item.body}</p>
-            </Link>
+          {demoArticles.map((item) => (
+            <ArticleCard key={item.title} {...item} />
           ))}
         </div>
       </section>

@@ -7,21 +7,31 @@
   --primary-green: #28a745;
   --secondary-green: #218838;
   --light-green: #d4edda;
-  --background: #e9f5ff;
+  --risk-amber: #d97706;
+  --risk-amber-soft: #fef3c7;
+  --risk-red: #dc2626;
+  --risk-red-soft: #fee2e2;
+  --background: #d9ecfb;
   --foreground: #111827;
   --card: #ffffff;
+  --surface: #f7fbff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
+  --color-surface: var(--surface);
   --color-bcentx-blue: #1b145e;
   --color-bcentx-green: #28a745;
   --color-bcentx-green-dark: #218838;
   --color-bcentx-blue-soft: #e9f5ff;
   --color-bcentx-green-soft: #d4edda;
   --color-bcentx-gray: #6c757d;
+  --color-risk-amber: #d97706;
+  --color-risk-amber-soft: #fef3c7;
+  --color-risk-red: #dc2626;
+  --color-risk-red-soft: #fee2e2;
   --font-sans: var(--font-source-sans);
 }
 
@@ -31,10 +41,35 @@ body {
   font-family: var(--font-source-sans), "Segoe UI", sans-serif;
 }
 
-a {
+/* Content links only — do not override header/footer nav colors */
+main a:not([class*="bg-"]):not([class*="text-"]) {
   color: var(--primary-green);
 }
 
-a:hover {
+main a:not([class*="bg-"]):not([class*="text-"]):hover {
   color: var(--secondary-green);
+}
+
+/* Force white nav text on dark blue header (beats cascading link defaults) */
+header nav a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+header nav a:hover,
+header nav a:focus-visible,
+header nav a[aria-current="page"] {
+  color: var(--primary-blue) !important;
+  background-color: var(--light-green);
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: #ffffff !important;
+  text-decoration: underline;
 }

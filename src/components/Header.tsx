@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/categories", label: "Categories" },
@@ -10,13 +13,15 @@ const navLinks = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="border-b-4 border-bcentx-green bg-bcentx-blue shadow-sm">
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3"
+        className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
         aria-label="Primary"
       >
-        <Link href="/" className="inline-flex items-center" aria-label="Bcentx Home">
+        <Link href="/" className="inline-flex shrink-0 items-center" aria-label="Bcentx Home">
           <Image
             src="/brand/LogoSVG.svg"
             alt="Bcentx"
@@ -25,19 +30,26 @@ export function Header() {
             priority
             unoptimized
             className="h-10 w-auto"
+            style={{ width: "auto", height: "2.5rem" }}
           />
         </Link>
-        <ul className="flex flex-wrap items-center gap-2 sm:gap-3">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="rounded-md px-3 py-1.5 text-sm font-medium text-white no-underline transition-colors hover:bg-white/10 hover:text-white"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="flex flex-wrap items-center gap-1 sm:justify-end sm:gap-2">
+          {navLinks.map((link) => {
+            const isActive =
+              pathname === link.href || pathname.startsWith(`${link.href}/`);
+
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className="rounded-full px-3 py-1.5 text-sm font-semibold text-white no-underline transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

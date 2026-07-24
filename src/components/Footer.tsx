@@ -10,21 +10,18 @@ const footerLinks = [
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-bcentx-blue/20 bg-bcentx-blue text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-lg font-semibold">Bcentx</p>
-          <p className="mt-1 max-w-md text-sm text-white/80">
+          <p className="text-lg font-semibold text-white">Bcentx</p>
+          <p className="mt-1 max-w-md text-sm leading-relaxed text-white/80">
             Wealth-building intelligence, without the hype. Educational content only —
             not personalized financial, legal, or tax advice.
           </p>
         </div>
-        <ul className="flex flex-wrap gap-3 text-sm">
+        <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {footerLinks.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-white/90 no-underline hover:text-white hover:underline"
-              >
+              <Link href={link.href} className="text-white/90 no-underline hover:text-white">
                 {link.label}
               </Link>
             </li>
