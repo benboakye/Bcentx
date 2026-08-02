@@ -1,0 +1,3 @@
+# Local Supabase CLI configuration for Bcentx 2.0.
+# Hosted project linkage is stored separately by the Supabase CLI.
+project_id = "Bcentx-2.0"
