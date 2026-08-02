@@ -35,6 +35,13 @@ export type AvailabilityStatus =
   | "unavailable"
   | "unknown"
   | "verify";
+export type CommissionType =
+  | "fixed"
+  | "percentage"
+  | "recurring"
+  | "revenue_share"
+  | "hybrid"
+  | "unknown";
 export type WarningType =
   | "scam"
   | "financial"
@@ -216,6 +223,31 @@ export type CountryAvailabilityListRow = CountryAvailabilityRow & {
   platforms: { name: string } | null;
 };
 
+export type AffiliateProgramRow = {
+  id: string;
+  platform_id: string;
+  program_name: string;
+  affiliate_url: string | null;
+  commission_type: CommissionType;
+  commission_details: string | null;
+  cookie_duration: string | null;
+  payout_methods: string | null;
+  payout_threshold: string | null;
+  country_restrictions: string | null;
+  promotional_rules: string | null;
+  disclosure_required: boolean;
+  status: ContentStatus;
+  last_verified_at: string | null;
+  created_by: string | null;
+  updated_by: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+export type AffiliateProgramListRow = AffiliateProgramRow & {
+  platforms: { name: string; slug: string } | null;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -233,6 +265,9 @@ export type Database = {
       };
       platforms: {
         Row: PlatformRow;
+      };
+      affiliate_programs: {
+        Row: AffiliateProgramRow;
       };
     };
   };

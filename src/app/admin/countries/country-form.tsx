@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import type { CountryActionState } from "@/app/admin/countries/actions";
 import { Button } from "@/components/ui/Button";
 import { slugify } from "@/lib/admin/slug";
@@ -34,12 +34,6 @@ export function CountryForm({ country, action, submitLabel }: CountryFormProps) 
   const [slug, setSlug] = useState(country?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(Boolean(country?.slug));
 
-  useEffect(() => {
-    if (!slugTouched) {
-      setSlug(slugify(name));
-    }
-  }, [name, slugTouched]);
-
   return (
     <form action={formAction} className="space-y-5">
       {state.error ? (
@@ -58,7 +52,11 @@ export function CountryForm({ country, action, submitLabel }: CountryFormProps) 
             name="name"
             required
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              const nextName = e.target.value;
+              setName(nextName);
+              if (!slugTouched) setSlug(slugify(nextName));
+            }}
             className={fieldClass}
           />
         </div>

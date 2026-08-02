@@ -5,6 +5,8 @@ import { requireStaffProfile } from "@/lib/auth";
 import { WarningBox } from "@/components/ui/WarningBox";
 import { SignOutButton } from "./sign-out-button";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminLayout({
   children,
 }: {
@@ -94,6 +96,12 @@ where email = '${profile.email}';`}</pre>
                 className="text-white/85 no-underline hover:text-white"
               >
                 Availability
+              </Link>
+              <Link
+                href="/admin/affiliates"
+                className="text-white/85 no-underline hover:text-white"
+              >
+                Affiliates
               </Link>
             </nav>
           </div>

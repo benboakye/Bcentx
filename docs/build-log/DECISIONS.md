@@ -96,3 +96,19 @@
 **Alternatives considered:** Add delete RLS + cascade rules; omit remove entirely.  
 **Impact:** Archived categories leave public pages; staff can still see and restore them by editing status.  
 **Status:** active
+
+---
+
+## Decision 010 - Verified and disclosed affiliate publication
+
+**Date:** 2026-08-02
+
+**Decision:** Manage affiliate relationships as structured `affiliate_programs` records. Always require disclosure, accept only HTTP(S) destination URLs, and require a verification date before publication.
+
+**Reason:** Affiliate revenue must remain separate from editorial scoring, while users need clear, current terms before following a monetized link.
+
+**Alternatives considered:** Platform-level affiliate flags only; unrestricted affiliate URLs; publishing unverified program records.
+
+**Impact:** Staff manage affiliate records through `/admin/affiliates`; published platform pages display a disclosure, relevant terms, verification dates, and sponsored link attributes.
+
+**Status:** active

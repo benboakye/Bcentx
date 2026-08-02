@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import type { RiskWarningActionState } from "@/app/admin/risk-warnings/actions";
 import { Button } from "@/components/ui/Button";
 import { slugify } from "@/lib/admin/slug";
@@ -64,12 +64,6 @@ export function RiskWarningForm({
   const [slug, setSlug] = useState(warning?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(Boolean(warning?.slug));
 
-  useEffect(() => {
-    if (!slugTouched) {
-      setSlug(slugify(title));
-    }
-  }, [title, slugTouched]);
-
   return (
     <form action={formAction} className="space-y-5">
       {state.error ? (
@@ -87,7 +81,11 @@ export function RiskWarningForm({
           name="title"
           required
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => {
+            const nextTitle = e.target.value;
+            setTitle(nextTitle);
+            if (!slugTouched) setSlug(slugify(nextTitle));
+          }}
           className={fieldClass}
         />
       </div>
