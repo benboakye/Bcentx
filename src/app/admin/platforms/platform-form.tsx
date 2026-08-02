@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import type { PlatformActionState } from "@/app/admin/platforms/actions";
 import { Button } from "@/components/ui/Button";
 import { slugify } from "@/lib/admin/slug";
@@ -50,12 +50,6 @@ export function PlatformForm({
   const [slug, setSlug] = useState(platform?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(Boolean(platform?.slug));
 
-  useEffect(() => {
-    if (!slugTouched) {
-      setSlug(slugify(name));
-    }
-  }, [name, slugTouched]);
-
   return (
     <form action={formAction} className="space-y-5">
       {state.error ? (
@@ -74,7 +68,11 @@ export function PlatformForm({
             name="name"
             required
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              const nextName = e.target.value;
+              setName(nextName);
+              if (!slugTouched) setSlug(slugify(nextName));
+            }}
             className={fieldClass}
           />
         </div>

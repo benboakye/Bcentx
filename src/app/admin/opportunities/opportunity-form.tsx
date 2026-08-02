@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import type { OpportunityActionState } from "@/app/admin/opportunities/actions";
 import { Button } from "@/components/ui/Button";
 import { slugify } from "@/lib/admin/slug";
@@ -90,12 +90,6 @@ export function OpportunityForm({
   const [slug, setSlug] = useState(opportunity?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(Boolean(opportunity?.slug));
 
-  useEffect(() => {
-    if (!slugTouched) {
-      setSlug(slugify(name));
-    }
-  }, [name, slugTouched]);
-
   if (categories.length === 0) {
     return (
       <p className="rounded-md bg-risk-amber-soft px-3 py-2 text-sm text-risk-amber">
@@ -160,7 +154,11 @@ export function OpportunityForm({
           name="name"
           required
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            const nextName = e.target.value;
+            setName(nextName);
+            if (!slugTouched) setSlug(slugify(nextName));
+          }}
           className={fieldClass}
         />
       </div>

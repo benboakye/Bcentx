@@ -6,9 +6,11 @@ Global wealth intelligence platform — discover, compare, and evaluate legitima
 
 ## Status
 
-Sprint 1 foundation on `feature/project-setup`.
+Sprint 6 affiliate transparency work on `feature/affiliate-programs`.
 
 - **Active app:** Next.js (App Router) + TypeScript + Tailwind at repository root
+- **Data and auth:** Supabase schema, published-content reads, staff authentication, and core admin CRUD
+- **Current feature:** Affiliate program administration and disclosed platform links
 - **V1 archive:** `legacy/v1-static-site/` (static HTML/CSS/JS prototype)
 - **Freeze tag:** `v1-static-freeze`
 
@@ -18,8 +20,8 @@ Sprint 1 foundation on `feature/project-setup`.
 |---|---|
 | Frontend | Next.js |
 | Styling | Tailwind CSS |
-| Database | Supabase PostgreSQL (upcoming) |
-| Auth | Supabase Auth (upcoming) |
+| Database | Supabase PostgreSQL |
+| Auth | Supabase Auth |
 | Hosting | Vercel |
 
 ## Develop locally
@@ -41,9 +43,10 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Branching
 
 ```text
-main                  # V1 freeze (do not overwrite carelessly)
-develop               # V2 integration
-feature/project-setup # Sprint 1 work
+main                       # V1 freeze (do not overwrite carelessly)
+develop                    # Intended V2 integration branch
+feature/auth-admin         # Completed V2 foundation through core admin CRUD
+feature/affiliate-programs # Current Sprint 6 work
 ```
 
 ## Trust rules

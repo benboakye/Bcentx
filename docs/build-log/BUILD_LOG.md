@@ -2,15 +2,51 @@
 
 ## Current Build Status
 
-- Current phase: Sprint 5 — Admin CRUD + linking
-- Current branch: `feature/auth-admin`
-- Last completed task: Opportunity↔platform links + country availability CRUD
-- Next task: Commit Sprint 4–5; optional affiliate programs / content import
-- Blockers: none
+- Current phase: Sprint 6 — Affiliate transparency
+- Current branch: `feature/affiliate-programs`
+- Last completed task: Affiliate program CRUD + disclosed public platform links
+- Next task: Live Supabase CRUD verification, then source/verification tracking and content import
+- Blockers: Supabase environment access is required for live end-to-end CRUD verification
 
 ---
 
 ## Session Log
+
+### 2026-08-02 - Sprint 6: Affiliate program management
+
+**Branch:** `feature/affiliate-programs`
+
+**Goal:** Recover the unfinished affiliate draft and complete the trust-first affiliate workflow
+
+**What was done:**
+
+1. Recovered the partial local affiliate-program draft onto a clean checkout of `feature/auth-admin`
+2. Added affiliate program database types and Supabase data-access functions
+3. Added staff list / create / edit / archive routes under `/admin/affiliates`
+4. Added Affiliates to the protected admin navigation and dashboard
+5. Added server-side affiliate URL validation and required verification dates for published records
+6. Added disclosed affiliate terms and sponsored links to published platform pages
+7. Forced the authenticated admin tree to render dynamically so builds do not require Supabase during prerendering
+8. Reworked automatic slug updates in five existing admin forms to satisfy current React lint rules
+9. Updated README, build status, and decision log
+
+**Checks run:**
+
+- `tsc --noEmit` — success
+- `eslint .` — success
+- `next build` — success
+- Next.js reports the existing middleware-to-proxy deprecation warning
+
+**Next step:**
+
+- Verify affiliate CRUD and public disclosure behavior against the live Supabase project
+- Continue with source/verification tracking and structured content import
+
+**Suggested commit message:**
+
+`feat: add affiliate program management and disclosures`
+
+---
 
 ### 2026-07-19 - Sprint 5: Linking layer
 

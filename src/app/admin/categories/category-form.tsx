@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import type { CategoryActionState } from "@/app/admin/categories/actions";
 import { Button } from "@/components/ui/Button";
 import { slugify } from "@/lib/admin/slug";
@@ -45,12 +45,6 @@ export function CategoryForm({
   const [name, setName] = useState(category?.name ?? "");
   const [slug, setSlug] = useState(category?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(Boolean(category?.slug));
-
-  useEffect(() => {
-    if (!slugTouched) {
-      setSlug(slugify(name));
-    }
-  }, [name, slugTouched]);
 
   return (
     <form action={formAction} className="space-y-5">
@@ -98,7 +92,11 @@ export function CategoryForm({
           name="name"
           required
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            const nextName = e.target.value;
+            setName(nextName);
+            if (!slugTouched) setSlug(slugify(nextName));
+          }}
           className={fieldClass}
         />
       </div>

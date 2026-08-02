@@ -43,6 +43,12 @@ const modules = [
     href: "/admin/availability",
     status: "Ready",
   },
+  {
+    title: "Affiliate programs",
+    body: "Track verified affiliate terms, disclosures, and platform relationships.",
+    href: "/admin/affiliates",
+    status: "Ready",
+  },
 ];
 
 export default function AdminPage() {
